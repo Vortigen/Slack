@@ -11,44 +11,30 @@ namespace TeamDemo
 
         static void Main(string[] args)
         {
-            var carsCount = ReadCarsCount();
 
-            var cars = new Car[carsCount];
-            EnterCarsInformation(cars);
+            var team = new Team();
 
-            DisplayCarsTable(cars);
+            EnterTeamInfo(team);
+
+            DisplayTeamInfo(team);
 
             Console.ReadLine();
         }
 
         #endregion
-
+        
         #region Private Methods
 
-        private static int ReadCarsCount()
+        public static void EnterTeamInfo(Team team)
         {
-            Console.Write("Въведете брой коли: ");
-            return int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter information about team");
+            Team newTeam = new Team();
+            newTeam.EnterInformation();
         }
 
-        public static void EnterCarsInformation(IList<Car> cars)
+        private static void DisplayTeamInfo(Team team)
         {
-            for (int carIndex = 0; carIndex < cars.Count; carIndex++)
-            {
-                Console.WriteLine("Въведете информация за кола " + (carIndex + 1));
-                Car newCar = new Car();
-                newCar.EnterInformation();
-
-                cars[carIndex] = newCar;
-            }
-        }
-
-        private static void DisplayCarsTable(IList<Car> cars)
-        {
-            foreach (var car in cars)
-            {
-                Console.WriteLine(car.GetFormattedInfo());
-            }
+            Console.WriteLine(team.GetFormattedInfo());
         }
 
         #endregion

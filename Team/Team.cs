@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Team
+namespace TeamDemo
 {
     class Team
     {
@@ -11,7 +11,7 @@ namespace Team
         #region Private Fields
 
         private string name;
-        private DateTime yearOfCreation;
+        private int yearOfCreation;
         private string stadium;
         private string owner;
         private string headCoach;
@@ -39,7 +39,7 @@ namespace Team
             }
         }
 
-        public DateTime YearOfCreation
+        public int YearOfCreation
         {
             get
             {
@@ -48,8 +48,6 @@ namespace Team
 
             set
             {
-                if (value > DateTime.Now)
-                    throw new ArgumentException("Year of creation must be in the past");
                 yearOfCreation = value;
             }
         }
@@ -62,7 +60,7 @@ namespace Team
             }
             set
             {
-                Stadium = value;
+                stadium = value;
             }
         }
 
@@ -102,40 +100,36 @@ namespace Team
             }
         }
 
-        private string name;
-        private DateTime yearOfCreation;
-        private string stadium;
-        private string owner;
-        private string headCoach;
-        private string webSite;
-
-
         public void EnterInformation()
         {
             Console.Write("Name: ");
             Name = Console.ReadLine();
             
             Console.Write("Year of creation: ");
-            YearOfCreation = DateTime.Parse(Console.ReadLine());
+            YearOfCreation = int.Parse(Console.ReadLine());
             
-            Console.Write("Stadion: ");
+            Console.Write("Stadium: ");
             Stadium = Console.ReadLine();
             
             Console.Write("Owner: ");
-            Owner = decimal.Parse(Console.ReadLine());
+            Owner = Console.ReadLine();
             
             Console.Write("Head Coach: ");
             HeadCoach = Console.ReadLine();
 
             Console.Write("Web Site: ");
-            webSite = Console.ReadLine();
+            WebSite = Console.ReadLine();
         }
 
         public string GetFormattedInfo()
         {
-            return Brand + " (" + Model + ") - " +
-                    Mileage + " (" + Price + ") " +
-                    Color;
+            return
+                "Team Name: " + Name +
+                " Year of Creation: " + YearOfCreation +
+                " Stadium: " + Stadium +
+                " Owner: " + Owner +
+                " Head Coach: " + HeadCoach +
+                " Web Site" + WebSite;
         }
 
         public override string ToString()
