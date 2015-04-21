@@ -30,6 +30,8 @@ namespace TeamDemo
             Console.WriteLine("Enter information about team");
             Team newTeam = new Team();
             newTeam.EnterInformation();
+
+            team = newTeam;
         }
 
         private static void DisplayTeamInfo(Team team)
