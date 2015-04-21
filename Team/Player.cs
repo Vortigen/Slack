@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PlayerDemo
+namespace TeamDemo
 {
     class Player
     {
@@ -14,8 +14,8 @@ namespace PlayerDemo
         private DateTime birthDate;
         private string egn;
         private string birthPlace;
-        private string number;
-        private string height;
+        private byte number;
+        private double height;
         private decimal salary;
 
         #endregion
@@ -40,97 +40,134 @@ namespace PlayerDemo
             }
         }
 
-        public int YearOfCreation
+        public DateTime BirthDate
         {
             get
             {
-                return yearOfCreation;
+                return birthDate;
+            }
+
+            private set
+            {
+                if (value > DateTime.Now)
+                {
+                    throw new ArgumentException("Birth date must be in the past");
+                }
+                else
+                {
+                    birthDate = value;
+                }
+
+            }
+        }
+
+        public string EGN
+        {
+            get
+            {
+                return egn;
             }
 
             set
             {
-                yearOfCreation = value;
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentNullException("The EGN is mandatory");
+                }
+                else
+                {
+                    egn = value;
+                }
             }
         }
 
-        public string Stadium
+        public string BirthPlace
         {
             get
             {
-                return stadium;
+                return birthPlace;
             }
+
             set
             {
-                stadium = value;
+                birthPlace = value;
             }
         }
 
-        public string Owner
+        public byte Number
         {
             get
             {
-                return owner;
+                return number;
             }
+
             set
             {
-                owner = value;
+                number = value;
             }
         }
 
-        public string HeadCoach
+        public double Height
         {
             get
             {
-                return headCoach;
+                return height;
             }
+
             set
             {
-                headCoach = value;
+                height = value;
             }
         }
 
-        public string WebSite
+        public decimal Salary
         {
             get
             {
-                return webSite;
+                return salary;
             }
+
             set
             {
-                webSite = value;
+                salary = value;
             }
         }
+
 
         public void EnterInformation()
         {
             Console.Write("Name: ");
             Name = Console.ReadLine();
 
-            Console.Write("Year of creation: ");
-            YearOfCreation = int.Parse(Console.ReadLine());
+            Console.Write("Birth date: ");
+            BirthDate = DateTime.Parse(Console.ReadLine());
 
-            Console.Write("Stadium: ");
-            Stadium = Console.ReadLine();
+            Console.Write("EGN: ");
+            EGN = Console.ReadLine();
 
-            Console.Write("Owner: ");
-            Owner = Console.ReadLine();
+            Console.Write("Birth place: ");
+            BirthPlace = Console.ReadLine();
 
-            Console.Write("Head coach: ");
-            HeadCoach = Console.ReadLine();
+            Console.Write("Number: ");
+            Number = byte.Parse(Console.ReadLine());
 
-            Console.Write("Web site: ");
-            WebSite = Console.ReadLine();
+            Console.Write("Height: ");
+            Height = double.Parse(Console.ReadLine());
+
+            Console.Write("Salary: ");
+            Salary = decimal.Parse(Console.ReadLine());
         }
 
         public string GetFormattedInfo()
         {
             return
                 "Name: " + Name + Environment.NewLine +
-                "Year of creation: " + YearOfCreation.ToString() + Environment.NewLine +
-                "Stadium: " + Stadium + Environment.NewLine +
-                "Owner: " + Owner + Environment.NewLine +
-                "Head coach: " + HeadCoach + Environment.NewLine +
-                "Web site: " + WebSite;
+                "Birth date: " + BirthDate + Environment.NewLine +
+                "EGN: " + EGN + Environment.NewLine +
+                "Birth place: " + BirthPlace + Environment.NewLine +
+                "Number: " + Number + Environment.NewLine +
+                "Height: " + Height + Environment.NewLine +
+                "Salary: " + Salary;
         }
     }
 }

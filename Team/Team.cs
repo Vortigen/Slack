@@ -125,11 +125,11 @@ namespace TeamDemo
         {
             return
                 "Name: " + Name + Environment.NewLine +
-                "Year of creation: " + YearOfCreation.ToString() + Environment.NewLine +
+                "Year of creation: " + YearOfCreation + Environment.NewLine +
                 "Stadium: " + Stadium + Environment.NewLine +
                 "Owner: " + Owner + Environment.NewLine +
                 "Head coach: " + HeadCoach + Environment.NewLine +
-                "Web site: " + WebSite;
+                "Web site: " + WebSite + Environment.NewLine;
         }
     }
 }

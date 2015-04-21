@@ -12,13 +12,20 @@ namespace TeamDemo
         static void Main(string[] args)
         {
 
-            var team = new Team();
+           //Team
+           Team team = new Team();
+            
+           EnterTeamInfo(team);
 
-            EnterTeamInfo(team);
+           DisplayTeamInfo(team);
 
-            Console.WriteLine();
+            //Players
+            int playersCount = ReadPlayersCount();
 
-            DisplayTeamInfo(team);
+            var players = new Player[playersCount];
+            EnterPlayersInfo(players);
+
+            DisplayPlayersInfo(players);
 
             Console.ReadLine();
         }
@@ -26,6 +33,13 @@ namespace TeamDemo
         #endregion
         
         #region Private Methods
+
+        private static int ReadPlayersCount()
+        {
+            Console.WriteLine();
+            Console.Write("Enter amount of players: ");
+            return int.Parse(Console.ReadLine());
+        }
 
         public static void EnterTeamInfo(Team team)
         {
@@ -36,7 +50,30 @@ namespace TeamDemo
 
         private static void DisplayTeamInfo(Team team)
         {
+            Console.WriteLine();
             Console.WriteLine(team.GetFormattedInfo());
+        }
+
+        public static void EnterPlayersInfo(IList<Player> players)
+        {
+            for (int playerIndex = 0; playerIndex < players.Count; playerIndex++)
+            {
+                Console.WriteLine("Enter car infomation " + (playerIndex + 1));
+                Player newPlayer = new Player();
+                newPlayer.EnterInformation();
+
+                players[playerIndex] = newPlayer;
+                Console.WriteLine();
+            }
+        }
+
+        private static void DisplayPlayersInfo(IList<Player> players)
+        {
+            Console.WriteLine();
+            foreach (Player player in players)
+            {
+                Console.WriteLine(player.GetFormattedInfo());
+            }
         }
 
         #endregion
