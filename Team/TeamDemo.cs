@@ -13,18 +13,14 @@ namespace TeamDemo
         {
 
            //Team
-           Team team = new Team();
-            
+           Team team = new Team();            
            EnterTeamInfo(team);
-
            DisplayTeamInfo(team);
 
             //Players
             int playersCount = ReadPlayersCount();
-
             var players = new Player[playersCount];
             EnterPlayersInfo(players);
-
             DisplayPlayersInfo(players);
 
             Console.ReadLine();
@@ -58,7 +54,7 @@ namespace TeamDemo
         {
             for (int playerIndex = 0; playerIndex < players.Count; playerIndex++)
             {
-                Console.WriteLine("Enter car infomation " + (playerIndex + 1));
+                Console.WriteLine("Enter player infomation " + (playerIndex + 1));
                 Player newPlayer = new Player();
                 newPlayer.EnterInformation();
 
@@ -69,11 +65,11 @@ namespace TeamDemo
 
         private static void DisplayPlayersInfo(IList<Player> players)
         {
-            Console.WriteLine();
             foreach (Player player in players)
             {
                 Console.WriteLine(player.GetFormattedInfo());
             }
+            Console.WriteLine();
         }
 
         #endregion

@@ -161,13 +161,13 @@ namespace TeamDemo
         public string GetFormattedInfo()
         {
             return
-                "Name: " + Name + Environment.NewLine +
-                "Birth date: " + BirthDate + Environment.NewLine +
-                "EGN: " + EGN + Environment.NewLine +
-                "Birth place: " + BirthPlace + Environment.NewLine +
-                "Number: " + Number + Environment.NewLine +
-                "Height: " + Height + Environment.NewLine +
-                "Salary: " + Salary;
+                "Name: " + Name + "\n" +
+                "Birth date: " + BirthDate.ToString() + "\n" +
+                "EGN: " + EGN + "\n" +
+                "Birth place: " + BirthPlace + "\n" +
+                "Number: " + Number.ToString() + "\n" +
+                "Height: " + Height.ToString() + "\n" +
+                "Salary: " + Salary.ToString() + "\n";
         }
     }
 }

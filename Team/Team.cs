@@ -124,12 +124,12 @@ namespace TeamDemo
         public string GetFormattedInfo()
         {
             return
-                "Name: " + Name + Environment.NewLine +
-                "Year of creation: " + YearOfCreation + Environment.NewLine +
-                "Stadium: " + Stadium + Environment.NewLine +
-                "Owner: " + Owner + Environment.NewLine +
-                "Head coach: " + HeadCoach + Environment.NewLine +
-                "Web site: " + WebSite + Environment.NewLine;
+                "Name: " + Name + "\n" +
+                "Year of creation: " + YearOfCreation + "\n" +
+                "Stadium: " + Stadium + "\n" +
+                "Owner: " + Owner + "\n" +
+                "Head coach: " + HeadCoach + "\n" +
+                "Web site: " + WebSite + "\n";
         }
     }
 }
