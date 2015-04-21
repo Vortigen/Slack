@@ -16,6 +16,8 @@ namespace TeamDemo
 
             EnterTeamInfo(team);
 
+            Console.WriteLine();
+
             DisplayTeamInfo(team);
 
             Console.ReadLine();
@@ -27,11 +29,9 @@ namespace TeamDemo
 
         public static void EnterTeamInfo(Team team)
         {
-            Console.WriteLine("Enter information about team");
-            Team newTeam = new Team();
-            newTeam.EnterInformation();
+            Console.WriteLine("Enter information about the team");
 
-            team = newTeam;
+            team.EnterInformation();
         }
 
         private static void DisplayTeamInfo(Team team)

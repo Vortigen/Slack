@@ -3,27 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TeamDemo
+namespace PlayerDemo
 {
-    class Team
+    class Player
     {
 
         #region Private Fields
 
         private string name;
-        private int yearOfCreation;
-        private string stadium;
-        private string owner;
-        private string headCoach;
-        private string webSite;
+        private DateTime birthDate;
+        private string egn;
+        private string birthPlace;
+        private string number;
+        private string height;
+        private decimal salary;
 
         #endregion
 
         public string Name
         {
-            get 
-            { 
-                return name; 
+            get
+            {
+                return name;
             }
 
             set
@@ -104,16 +105,16 @@ namespace TeamDemo
         {
             Console.Write("Name: ");
             Name = Console.ReadLine();
-            
+
             Console.Write("Year of creation: ");
             YearOfCreation = int.Parse(Console.ReadLine());
-            
+
             Console.Write("Stadium: ");
             Stadium = Console.ReadLine();
-            
+
             Console.Write("Owner: ");
             Owner = Console.ReadLine();
-            
+
             Console.Write("Head coach: ");
             HeadCoach = Console.ReadLine();
 
