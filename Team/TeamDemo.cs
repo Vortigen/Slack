@@ -47,7 +47,7 @@ namespace TeamDemo
         private static void DisplayTeamInfo(Team team)
         {
             Console.WriteLine();
-            Console.WriteLine(team.GetFormattedInfo());
+            Console.WriteLine(team.GetFormattedInfo())
         }
 
         public static void EnterPlayersInfo(IList<Player> players)
