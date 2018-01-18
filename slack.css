@@ -1743,7 +1743,7 @@ ts-thread .new_reply_indicator .blue_dot { color: #bf360c; }
 
 .c-channel_insights_activity_bar_container:hover .c-channel_insights__activity_bar { background-color: #545454; }
 
-.c-channel_insights__activity_bar { background-color: rgba(84, 84, 84, 0.5); }
+.c-channel_insights__activity_bar { background-color: rgba(12, 12, 12, 0.5); }
 
 .c-channel_insights__message ts-message.standalone:not(.for_mention_display):not(.for_search_display):not(.for_top_results_search_display):not(.for_star_display) { background-color: #222; border-color: #545454; }
 
